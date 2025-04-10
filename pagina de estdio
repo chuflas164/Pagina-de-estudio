@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Inteligente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        textarea, input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #35424a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2c3e50;
+        }
+        .flashcard {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .flashcard-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Estudio Inteligente</h1>
+
+<h2>Resumidor de Texto</h2>
+<textarea id="texto" placeholder="Ingresa el texto que deseas resumir..."></textarea>
+<button onclick="resumirTexto()">Resumir</button>
+
+<h2>Resumen:</h2>
+<div id="resultado"></div>
+
+<h2>Crear Flashcards</h2>
+<input type="text" id="pregunta" placeholder="Pregunta" />
+<input type="text" id="respuesta" placeholder="Respuesta" />
+<button onclick="crearFlashcard()">Agregar Flashcard</button>
+
+<div class="flashcard-container" id="flashcards"></div>
+
+<script>
+    function resumirTexto() {
+        const texto = document.getElementById('texto').value;
+        
+        // Simulación de un resumen (esto debería ser reemplazado por una llamada a una API real)
+        const resumen = texto.split('. ').slice(0, 2).join('. ') + (texto.split('. ').length > 2 ? '...' : '');
+        
+        document.getElementById('resultado').innerText = resumen || 'Por favor, ingresa un texto para resumir.';
+    }
+
+    function crearFlashcard() {
+        const pregunta = document.getElementById('pregunta').value;
+        const respuesta = document.getElementById('respuesta').value;
+
+        if (pregunta && respuesta) {
+            const flashcardContainer = document.getElementById('flashcards');
+            const flashcard = document.createElement('div');
+            flashcard.className = 'flashcard';
+            flashcard.innerHTML = `<strong>Pregunta:</strong> ${pregunta}<br><strong>Respuesta:</strong> ${respuesta}`;
+            flashcardContainer.appendChild(flashcard);
+
+            // Limpiar los campos de entrada
+            document.getElementById('pregunta').value = '';
+            document.getElementById('respuesta').value = '';
+        } else {
+            alert('Por favor, completa ambos campos para crear una flashcard.');
+        }
+    }
+</script>
+
+</boecho "# Pagina-de-estudio" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/chuflas164/Pagina-de-estudio.git
+git push -u origin maindy>
+</html>
